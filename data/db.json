@@ -1,0 +1,36 @@
+ {
+    "users":[
+        {
+        "nom":"Wane",
+        "prenom":"Birane Baila",
+        "login":"joueur@gmail.com",
+        "password":"joueur",
+        "role":"ROLE_JOUEUR",
+        "score":15
+        },
+        {
+        "nom":"Faye",
+        "prenom":"Aissatou",
+        "login":"admin@gmail.com",
+        "password":"admin",
+        "role":"ROLE_ADMIN",
+        "score":0
+        },
+        {
+            "nom":"Mbaye",
+            "prenom":"Abdoul Wakhab Lamine",
+            "login":"wabsmbaye@gmail.com",
+            "password":"wabsmbaye",
+            "role":"ROLE_JOUEUR",
+            "score":29
+        },
+        {
+            "nom":"Ndiaye",
+            "prenom":"Gora",
+            "login":"gorandiaye@gmail.com",
+            "password":"ndiaye",
+            "role":"ROLE_JOUEUR",
+            "score":18 
+        }
+        ]
+ }
