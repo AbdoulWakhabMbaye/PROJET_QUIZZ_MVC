@@ -22,7 +22,7 @@ define("WEB_ROOT",str_replace("index.php","",$_SERVER['SCRIPT_NAME']));
 /**
 * Chemin sur l'action des formulaires(requetes get et post)
 */
-define("PATH_POST","http://localhost:/quizz_MVC/public/");
+define("PATH_POST","http://localhost:8000");
 
 /*clé erreur*/
 define("KEY_ERRORS","errors");

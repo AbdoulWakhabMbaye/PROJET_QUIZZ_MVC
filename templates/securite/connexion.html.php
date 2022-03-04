@@ -1,17 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="<?= WEB_ROOT."css".DIRECTORY_SEPARATOR."style.connexion.css"  ?>" media="screen" type="text/css">
-    <title>QUIZZ</title>
-</head>
-<body>
-    <div class="en-tete">
-        <img src="<?= WEB_ROOT.'img'.DIRECTORY_SEPARATOR.'Icônes'.DIRECTORY_SEPARATOR.'logo-QuizzSA.png'  ?>" alt="Logo">
-        <h1>Le plaisir de jouer</h1>
-    </div>
+<?php
+
+// if(isset($_SESSION[KEY_ERRORS])){
+//     $errors = $_SESSION[KEY_ERRORS];
+//     unset($_SESSION[KEY_ERRORS]);
+// }
+// require_once(PATH_VIEWS.'include'.DIRECTORY_SEPARATOR.'header.html.php');
+// require_once(PATH_VIEWS.'include'.DIRECTORY_SEPARATOR.'menu.html.php');
+
+?>
+
     <div class="container">
         <div class="login-form">
             <h3>Login Form</h3>
@@ -21,17 +18,31 @@
         <input type="hidden" name="controller" value="securite">
         <input type="hidden" name="action" value="connexion">
 
+            <?php if(isset($errors['connexion'])):  ?>
+                <small class="ERROR-LAY RED-ERROR"><?= $errors['connexion']   ?></small>
+            <?php endif ?>
+
+            
             <input type="text" placeholder="Login" name="login" class="login">
             <small id="email_error">Entrer un Email valide</small>
+
+            <?php if(isset($errors['login'])):  ?>
+                <small class="ERROR-LAY RED-ERROR"><?= $errors['login']   ?></small>
+            <?php endif ?>
+
             <input type="password" placeholder="Password" name="password" class="password">
             <small id="pass_error">Le mot de passe n'est pas valide</small>
+
+            <?php if(isset($errors['password'])):  ?>
+                <small class="ERROR-LAY RED-ERROR"><?= $errors['password']   ?></small>
+            <?php endif ?>
+
             <div class="connect">
-            <button type="submit" class="submit" name="connexion">Connexion</button>
+            <button type="submit" class="submit" name="connexion" id="connect">Connexion</button>
             <a href="#"><p>S'inscrire pour jouer?</p></a>
             </div>
         </form>
     </div>
 
     <script src="<?= WEB_ROOT.'js'.DIRECTORY_SEPARATOR.'connexion.js'  ?>"></script>
-</body>
-</html>
+

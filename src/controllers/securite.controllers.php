@@ -9,6 +9,16 @@ if($_SERVER['REQUEST_METHOD']=="POST"){
             $login=$_POST['login'];
             $password=$_POST['password'];
             connexion($login,$password);
+        }elseif($_REQUEST['action']=='inscription'){
+            if(isset($_POST)){
+                $prenom=$_POST['prenom'];
+                $nom=$_POST['nom'];
+                $login=$_POST['login'];
+                $password1=$_POST['password1'];
+                $password2=$_POST['password2'];
+                $file=$_POST['files'];
+
+            }
         }
     }
 }
@@ -18,10 +28,13 @@ if($_SERVER['REQUEST_METHOD']=="POST"){
 if($_SERVER['REQUEST_METHOD']=="GET"){
     if(isset($_REQUEST['action'])){
         if($_REQUEST['action']=="connexion"){
+            presenter_connexion();
             require_once(  PATH_VIEWS."securite".DIRECTORY_SEPARATOR."connexion.html.php"); 
+        }elseif($_REQUEST['action']=="deconnexion"){
+            log_out();
         }
     }else{
-        require_once(  PATH_VIEWS."securite".DIRECTORY_SEPARATOR."connexion.html.php");     
+        presenter_connexion();     
     
     }
 }
@@ -56,3 +69,21 @@ function connexion(string $login,string $password):void{
         exit();
     }
 }
+
+
+function presenter_connexion(){
+    ob_start();
+    require_once(PATH_VIEWS.'securite'.DIRECTORY_SEPARATOR.'connexion.html.php');
+    $content_for_views = ob_get_clean();
+    require_once(PATH_VIEWS.'user'.DIRECTORY_SEPARATOR.'accueil.html.php');
+}
+
+function log_out(){
+    session_destroy();
+    session_unset();
+    header('location:'.PATH_POST);
+    exit();
+}
+
+
+

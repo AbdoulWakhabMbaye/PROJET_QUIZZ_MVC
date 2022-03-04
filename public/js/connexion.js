@@ -78,16 +78,16 @@ function checkLength(input, min, max) {//Tester la longueur de la valeur  d'un i
 
 //Even listeners--------------------------------------------------------
 form.addEventListener('submit',function(e){
-    checkLength(password, 6, 25);
+    checkLength(password, 4, 25);
     checkEmail(login);
     checkRequired([login,password]);
      // annule l'envoi du formulaire
      e.preventDefault();
          
-    //  setTimeout( () => {
-    //      // lorsque que 5 secondes ce sont écoulé
-    //      // envoi le formulaire
-    //      form.submit();
-    //  }, 5000 );
+     setTimeout( function(){
+         // lorsque que 5 secondes ce sont écoulé
+         // envoi le formulaire
+         e.target.submit();
+     }, 1000);
     
 });
