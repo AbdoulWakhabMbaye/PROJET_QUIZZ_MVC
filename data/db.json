@@ -17,20 +17,20 @@
         "score":0
         },
         {
-            "nom":"Mbaye",
-            "prenom":"Abdoul Wakhab Lamine",
-            "login":"wabsmbaye@gmail.com",
-            "password":"wabsmbaye",
-            "role":"ROLE_JOUEUR",
-            "score":29
+        "nom":"Mbaye",
+        "prenom":"Abdoul Wakhab Lamine",
+        "login":"wabsmbaye@gmail.com",
+        "password":"wabsmbaye",
+        "role":"ROLE_JOUEUR",
+        "score":29
         },
         {
-            "nom":"Ndiaye",
-            "prenom":"Gora",
-            "login":"gorandiaye@gmail.com",
-            "password":"ndiaye",
-            "role":"ROLE_JOUEUR",
-            "score":18 
+        "nom":"Ndiaye",
+        "prenom":"Gora",
+        "login":"gorandiaye@gmail.com",
+        "password":"ndiaye",
+        "role":"ROLE_JOUEUR",
+        "score":18 
         }
         ]
  }

@@ -32,6 +32,8 @@ if($_SERVER['REQUEST_METHOD']=="GET"){
             require_once(  PATH_VIEWS."securite".DIRECTORY_SEPARATOR."connexion.html.php"); 
         }elseif($_REQUEST['action']=="deconnexion"){
             log_out();
+        }elseif($_REQUEST['action']=="inscriptionAdmin"){
+            presenter_inscriptionAdmin();
         }
     }else{
         presenter_connexion();     
@@ -85,5 +87,12 @@ function log_out(){
     exit();
 }
 
+function presenter_inscriptionAdmin(){
+    ob_start();
+    require_once(PATH_VIEWS.'securite'.DIRECTORY_SEPARATOR.'inscriptionAdmin.html.php');
+    $content_for_list = ob_get_clean();
+    require_once(PATH_VIEWS.'user'.DIRECTORY_SEPARATOR.'accueil.html.php');
+
+}
 
 

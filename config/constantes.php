@@ -29,3 +29,7 @@ define("KEY_ERRORS","errors");
 
 //clé d'accès à l'utilisateur connecté
 define("KEY_USER_CONNECT","user-connect");
+
+
+define("ROLE_JOUEUR","ROLE_JOUEUR");
+define("ROLE_ADMIN","ROLE_ADMIN");
