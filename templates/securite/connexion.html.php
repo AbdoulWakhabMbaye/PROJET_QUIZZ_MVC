@@ -39,7 +39,7 @@ if(isset($_SESSION[KEY_ERRORS])){
 
             <div class="connect">
             <button type="submit" class="submit" name="connexion" id="connect">Connexion</button>
-            <a href="#"><p>S'inscrire pour jouer?</p></a>
+            <a href="<?= PATH_POST.'?controller=securite&action=inscription'?>"><p>S'inscrire pour jouer?</p></a>
             </div>
         </form>
     </div>

@@ -1,5 +1,5 @@
 <div class="table-joueur">
-    <h2>Liste des joueurs</h2>
+    <h2>Liste des joueurs par score</h2>
     <table>
         <thead>
             <tr>

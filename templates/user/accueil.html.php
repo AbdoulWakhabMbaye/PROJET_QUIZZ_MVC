@@ -19,26 +19,26 @@ if(isset($content_for_views)){
     <div class="content-admin">
         <div class="dashboard-admin">
             <div class="dashboard-avatar">
-                <img src="" alt="AVATAR">
+                <img src="<?= WEB_ROOT."img".DIRECTORY_SEPARATOR."chat.webp" ?>" alt="AVATAR">
                 <h2>ADMIN</h2>
             </div>
             <div class="dashboard-list">
                 <div>
                     <p>Liste question</p>
-                    <img src="" alt="">
+                    <img src="<?= WEB_ROOT."img".DIRECTORY_SEPARATOR."Icônes".DIRECTORY_SEPARATOR."ic-liste.png" ?>" alt="">
                 </div>
                 <div>
                 <p><a href="<?= PATH_POST."?controller=user&action=lister.joueur"  ?>">Liste joueur</a></p>
 
-                <img src="" alt="">
+                <img src="<?= WEB_ROOT."img".DIRECTORY_SEPARATOR."Icônes".DIRECTORY_SEPARATOR."ic-liste.png" ?>" alt="">
                 </div>
                 <div>
                     <p>Créer question</p>
-                    <img src="" alt="">
+                    <img src="<?= WEB_ROOT."img".DIRECTORY_SEPARATOR."Icônes".DIRECTORY_SEPARATOR."ic-ajout.png" ?>" alt="">
                 </div>
                 <div>
                     <p><a href="<?= PATH_POST."?controller=securite&action=inscriptionAdmin"  ?>">Créer admin</a></p>
-                    <img src="" alt="">
+                    <img src="<?= WEB_ROOT."img".DIRECTORY_SEPARATOR."Icônes".DIRECTORY_SEPARATOR."ic-ajout.png" ?>" alt="">
                 </div>
             </div>
         </div>

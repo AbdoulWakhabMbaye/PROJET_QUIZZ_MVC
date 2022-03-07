@@ -35,6 +35,9 @@ if($_SERVER['REQUEST_METHOD']=="GET"){
         }elseif($_REQUEST['action']=="inscriptionAdmin"){
             presenter_inscriptionAdmin();
         }
+        elseif($_REQUEST['action']=="inscription"){
+            inscription();
+        }
     }else{
         presenter_connexion();     
     
@@ -93,6 +96,13 @@ function presenter_inscriptionAdmin(){
     $content_for_list = ob_get_clean();
     require_once(PATH_VIEWS.'user'.DIRECTORY_SEPARATOR.'accueil.html.php');
 
+}
+
+function inscription(){
+    ob_start();
+    require_once(PATH_VIEWS.'securite'.DIRECTORY_SEPARATOR.'inscriptionJoueur.html.php');
+    $content_for_views = ob_get_clean();
+    require_once(PATH_VIEWS.'user'.DIRECTORY_SEPARATOR.'accueil.html.php');    
 }
 
 
