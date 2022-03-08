@@ -37,11 +37,13 @@ function showError(input, message) {//Afficher les messages d'erreur
     }
     if(input==inputPassword1){
         input.style.border= "2px solid #e74c3c";
+        input.value='';
         password1_error.style.display = 'block';
         password1_error.innerText = message;
     }
     if(input==inputPassword2){
         input.style.border= "2px solid #e74c3c";
+        input.value='';
         password2_error.style.display = 'block';
         password2_error.innerText = message;
     }
@@ -111,14 +113,19 @@ function checkPasswordMatch(input1, input2) {
 
 //Event listeners--------------------------------------------------------
 forme.addEventListener('submit',function(e){
-    // e.preventDefault();//Bloquer la soumission du formulaire
-    
-
     
     checkRequired([prenom, nom, login, password1, password2]);
     checkEmail(login);
     checkPasswordMatch(password1,password2);
     checkLength(password, 6, 25);
+
+    e.preventDefault();
+         
+    setTimeout( function(){
+        // lorsque que 5 secondes ce sont écoulé
+        // envoi le formulaire
+        e.target.submit();
+    },2000);
     
 
 });

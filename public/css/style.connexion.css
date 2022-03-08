@@ -3,6 +3,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    transition: .5s;
 }
 a{
     text-decoration: none;
@@ -354,4 +355,13 @@ form #email_error, form #pass_error{
     font-size: 12px;
     border: 1px solid #EF9A9A;
     display: none;
+}
+
+
+.RED-ERROR{
+    color: #e74c3c;
+    background-color: rgba(255,0,0,0.1);
+    width: 60%;
+    text-align: center;
+    font-size: .85em;
 }

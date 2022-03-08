@@ -18,3 +18,10 @@ function find_users_by_role(string $role):array{
     }
     return $result;
 }
+
+function saveUser($data){
+    $users = array_to_json("users",$data);
+    if($users){
+        $message='<small style="color:#2ecc71; background-color:#2ecc71; ">Joueur enregistré</small>';
+    }
+}
