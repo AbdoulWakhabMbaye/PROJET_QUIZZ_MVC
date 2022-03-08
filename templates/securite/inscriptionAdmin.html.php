@@ -16,7 +16,7 @@ if(isset($_SESSION[KEY_ERRORS])){
         </div>
         <form action="<?= PATH_POST ?>" method="post" class="formul">
             <input type="hidden" name="controller" value="securite">
-            <input type="hidden" name="action" value="inscription">
+            <input type="hidden" name="action" value="inscriptionAdmin">
 
             <div class="first-control">
             <label for="prenom">Prénom</label>

@@ -13,6 +13,7 @@ body{
     background-image: url(../img/img-bg.png);
     background-size: cover;
     background-repeat: no-repeat;
+    background-attachment: fixed;
     height: 100vh;
     display: flex;
     align-items: center;
@@ -191,6 +192,7 @@ form #email_error, form #pass_error{
     box-shadow: 2px 2px 5px black;
     display: flex;
     justify-content: center;
+    overflow: auto;
 
 }
 .dashboard-avatar{
@@ -295,7 +297,7 @@ form #email_error, form #pass_error{
 .first-control input{
     width: 60%;
     height: 50%;
-    border: 2px solid;
+    border: 1px solid;
     
 }
 .fiche{

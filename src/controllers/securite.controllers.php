@@ -28,8 +28,7 @@ if($_SERVER['REQUEST_METHOD']=="POST"){
                     'password' =>$password2,
                     'role' =>'ROLE_JOUEUR',
                     'score' =>0
-                ); 
-                die(print_r($data));
+                );
                 saveUser($data);
                 if(!is_connect()){
                     header("location:".PATH_POST."?controller=securite&action=connexion");
@@ -54,8 +53,6 @@ if($_SERVER['REQUEST_METHOD']=="POST"){
                     'role' =>'ROLE_ADMIN',
                     'score' =>0
                 );
-                die(print_r($data));
-
                 saveUser($data);
                 header("location:".PATH_POST."?controller=securite&action=inscriptionAdmin");
                 exit();
