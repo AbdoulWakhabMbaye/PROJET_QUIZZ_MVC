@@ -43,6 +43,23 @@ body{
     justify-content: center;
     align-items: center;
 }
+.en-tete span{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 3%;
+}
+.en-tete a{
+    color: white;
+    font-weight: bolder;
+    background-color:rgb(74, 219, 195) ;
+    margin: 1%;
+    height: 45%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .container{
     display: flex;
     flex-direction: column;
@@ -366,4 +383,104 @@ form #email_error, form #pass_error{
     width: 60%;
     text-align: center;
     font-size: .85em;
+}
+
+
+/* STYLE CRÉER QUESTION */
+
+.container-question{
+    width: 90%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+}
+.container-question h2{
+    flex: 1;
+    text-align: center;
+}
+.box-question{
+    flex: 7;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid rgb(13, 176, 197);
+    justify-content: flex-start;
+    position: relative;
+
+}
+.lesquest{
+    display: flex;
+    align-items: center;
+}
+.lesquest textarea{
+    height: 90%;
+}
+.lespoints{
+    display: flex;
+    align-items: center;
+}
+.lespoints input{
+    height: 100%;
+    width: 10%;
+    margin-left: 1%;
+}
+.lestyp{
+    display: flex;
+    align-items: center;
+}
+.lestyp select{
+    height: 60%;
+    margin: 0 2%;
+}
+.lestyp img{
+    height: 60%;
+}
+.lesrep{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+}
+.diva{
+    width: 70%;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+}
+.input-text{
+    flex: 5;
+    height: 50%;
+   
+}
+.diva label{
+    flex: 2;
+}
+#radio, #check, #check{
+    flex: 1;
+    height: 50%;
+}
+
+.butt{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    justify-content: flex-end;
+}
+.enregistrer{
+    background-color: rgb(13, 176, 197);
+    border:none;
+}
+.error_question{
+    width: 60%;
+    height: 5%;
+    color: #e74c3c;
+    background-color: rgba(255,0,0,0.1);
+    text-align: center;
+    margin: 1% auto;
+    border-radius: 3px;
+    font-size: .5em;
+    border: 1px solid #EF9A9A;
+    display: none;
 }

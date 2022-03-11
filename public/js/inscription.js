@@ -17,6 +17,7 @@ var inputLogin = document.forms['formul']['login'];
 var inputPassword1= document.forms['formul']['password1'];
 var inputPassword2= document.forms['formul']['password2'];
 
+var countError = 0;
 
 //Functions-------------------------------------------------------------
 function showError(input, message) {//Afficher les messages d'erreur
@@ -74,6 +75,7 @@ function checkEmail(input) {//Tester si l'email est valide :  javascript : valid
         showSuccess(input);
     } else {
         showError(input,`Login n'est pas valide!`);
+        countError++;
     }
 }
 //
@@ -81,6 +83,7 @@ function checkRequired(inputArray) {// Tester si les champs ne sont pas vides
     inputArray.forEach(input => {
         if (input.value.trim() === '') {
             showError(input,`${getFieldName(input)} est obligatoire`);
+            countError++;
         }else{
             showSuccess(input);
         }
@@ -93,9 +96,11 @@ function getFieldName(input) {//Retour le nom de chaque input en se basant sur s
 //
 function checkLength(input, min, max) {//Tester la longueur de la valeur  d'un input
     if(input.value.length < min){
-        showError(input, `${getFieldName(input)} must be at least ${min} characters!`)
+        showError(input, `${getFieldName(input)} must be at least ${min} characters!`);
+        countError++;
     }else if(input.value.length > max){
         showError(input, `${getFieldName(input)} must be less than ${max} characters !`);
+        countError++;
     }else{
         showSuccess(input);
     }
@@ -104,6 +109,7 @@ function checkLength(input, min, max) {//Tester la longueur de la valeur  d'un i
 function checkPasswordMatch(input1, input2) {
     if (input1.value !== input2.value) {
         showError(input2, 'Mots de passe différents!');
+        countError++;
     }
 }
 
@@ -118,14 +124,50 @@ forme.addEventListener('submit',function(e){
     checkEmail(login);
     checkPasswordMatch(password1,password2);
     checkLength(password, 6, 25);
-
+    
     e.preventDefault();
          
     setTimeout( function(){
         // lorsque que 5 secondes ce sont écoulé
         // envoi le formulaire
         e.target.submit();
-    },2000);
+    }, 1000);
+
     
 
 });
+
+
+
+
+
+///////////////////////////////////////////////////////////////////
+
+const fichier = document.getElementById('fichier');
+//const profil = document.getElementById('profil');
+const avatar = document.querySelector('.avatar');
+const avata = document.querySelector('.avata');
+
+
+avatar.addEventListener('click', function(){
+    fichier.click();
+    fichier.addEventListener('change',getImage,false);
+});
+
+
+function getImage(){
+    if(avatar.children.length === 0){
+        const imagecharger = fichier.files[0];
+        let newImg = new Image(imagecharger.width, imagecharger.heigth);
+        newImg.src=URL.createObjectURL(imagecharger);
+        newImg.id = "profil";
+        avatar.appendChild(newImg);
+    }else{
+        const theElements = document.querySelectorAll('.avatar img');
+        theElements.forEach(elt =>{
+            avatar.removeChild(elt);   
+        })
+        getImage();
+
+    }
+}

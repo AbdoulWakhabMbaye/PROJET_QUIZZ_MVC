@@ -19,13 +19,13 @@ if(isset($content_for_views)){
     <div class="content-admin">
         <div class="dashboard-admin">
             <div class="dashboard-avatar">
-                <img src="<?= WEB_ROOT."img".DIRECTORY_SEPARATOR."chat.webp" ?>" alt="AVATAR">
-                <h2>ADMIN</h2>
+                <img src="<?= WEB_ROOT."uploads".DIRECTORY_SEPARATOR.$_SESSION['avatar'] ?>" alt="AVATAR">
+                <h2><?= $_SESSION['prenom'].'<br>'.$_SESSION['nom'] ?></h2>
             </div>
             <div class="dashboard-list">
                 <div>
                     <p>Liste question</p>
-                    <img src="<?= WEB_ROOT."img".DIRECTORY_SEPARATOR."Icônes".DIRECTORY_SEPARATOR."ic-liste.png" ?>" alt="">
+                    <img src="<?= WEB_ROOT."uplooads".DIRECTORY_SEPARATOR."Icônes"."ic-liste.png" ?>" alt="">
                 </div>
                 <div>
                 <p><a href="<?= PATH_POST."?controller=user&action=lister.joueur"  ?>">Liste joueur</a></p>
@@ -33,7 +33,8 @@ if(isset($content_for_views)){
                 <img src="<?= WEB_ROOT."img".DIRECTORY_SEPARATOR."Icônes".DIRECTORY_SEPARATOR."ic-liste.png" ?>" alt="">
                 </div>
                 <div>
-                    <p>Créer question</p>
+                <p><a href="<?= PATH_POST."?controller=securite&action=creerQuestion"  ?>">Créer question</a></p>
+
                     <img src="<?= WEB_ROOT."img".DIRECTORY_SEPARATOR."Icônes".DIRECTORY_SEPARATOR."ic-ajout.png" ?>" alt="">
                 </div>
                 <div>
